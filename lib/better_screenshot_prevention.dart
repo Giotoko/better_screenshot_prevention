@@ -6,8 +6,12 @@ import 'package:flutter/services.dart';
 class BetterScreenshotPrevention {
   static const MethodChannel _channel = MethodChannel('better_screenshot_prevention');
 
-  static Future<String?> get platformVersion async {
-    final String? version = await _channel.invokeMethod('getPlatformVersion');
-    return version;
+  static Future<bool> get preventScreenshot async{
+    return await _channel.invokeMethod("preventScreenshot");
   }
+
+  static Future<bool> get allowScreenshot async{
+    return await _channel.invokeMethod("allowScreenshot");
+  }
+
 }
