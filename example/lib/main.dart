@@ -1,7 +1,5 @@
+import 'dart:developer';
 import 'package:flutter/material.dart';
-import 'dart:async';
-
-import 'package:flutter/services.dart';
 import 'package:better_screenshot_prevention/better_screenshot_prevention.dart';
 
 void main() {
@@ -16,8 +14,6 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  String _platformVersion = 'Unknown';
-
   @override
   void initState() {
     super.initState();
@@ -33,27 +29,19 @@ class _MyAppState extends State<MyApp> {
         body: Center(
           child: Column(
             children: [
-              Text('Running on: $_platformVersion\n'),
+              Text('Screenshot This'),
               ElevatedButton(
                   onPressed: () async {
-                    try {
-                      await BetterScreenshotPrevention.preventScreenshot;
-                      print("try to screenshot now, i bet you cant 😎");
-                    } catch (e) {
-                      print("dont know whats wrong 😅");
-                    }
+                    await BetterScreenshotPrevention.preventScreenshot;
+                    log("try to screenshot now, i bet you cant 😎");
                   },
-                  child: Text("disallow SS")),
+                  child: const Text("disallow SS")),
               ElevatedButton(
                   onPressed: () async {
-                    try {
-                      await BetterScreenshotPrevention.allowScreenshot;
-                      print("you might screenshot again 😎");
-                    } catch (e) {
-                      print("dont know whats wrong 😅");
-                    }
+                    await BetterScreenshotPrevention.allowScreenshot;
+                    log("you might screenshot again 😎");
                   },
-                  child: Text("allow SS")),
+                  child: const Text("allow SS")),
             ],
           ),
         ),
