@@ -1,6 +1,6 @@
 name: better_screenshot_prevention
 description: A flutter package to protect sensitive data by preventing screenshots in both Android and iOS 
-version: 0.0.1
+version: 0.0.2
 homepage: https://jhonaiquel.com
 
 environment:
