@@ -1,10 +1,10 @@
 plugins {
     id "com.android.library"
-    id "org.jetbrains.kotlin.android" version "1.9.24"
+    id "org.jetbrains.kotlin.android"
 }
 
 android {
-    namespace "com.jhonaiquel.better_screenshot_prevention"   // ← THIS IS THE IMPORTANT LINE
+    namespace "com.jhonaiquel.better_screenshot_prevention" 
     compileSdk 35
 
     compileOptions {
@@ -17,10 +17,8 @@ android {
     }
 
     defaultConfig {
-        minSdk 21   // you can keep 16 if you really need it, but 21 is safer now
+        minSdk 21  
     }
 }
 
-dependencies {
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.24"
-}
+
