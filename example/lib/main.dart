@@ -29,7 +29,7 @@ class _MyAppState extends State<MyApp> {
         body: Center(
           child: Column(
             children: [
-              Text('Screenshot This'),
+              const Text('Screenshot This'),
               ElevatedButton(
                   onPressed: () async {
                     await BetterScreenshotPrevention.preventScreenshot;
